@@ -1,17 +1,8 @@
 from Chimera.databases import databases
-import sys
 import os
 
-git_submodules = [
-    '_include/Chimera/',
-]
 
-for directory in git_submodules:
-    path = os.path.join(directory)
-    if path not in sys.path:
-        sys.path.append(path)
-
-PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PROJECT_PATH = os.path.abspath(os.path.dirname(__name__))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -48,12 +39,13 @@ STATIC_ROOT = ''
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+    os.path.abspath(os.path.join(PROJECT_PATH, 'static')),
+)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 SECRET_KEY = 've72o5dcbs7fiof7^7ch+bk#%#+4xk0mj8tjj^r0#2!z8vu47='
@@ -69,17 +61,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = 'Freya.urls'
 
 WSGI_APPLICATION = 'Freya.wsgi.application'
-
-TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'Freya/templates'),
-)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
