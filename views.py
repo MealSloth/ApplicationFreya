@@ -1,9 +1,9 @@
-from _include.Chimera.Chimera.view.interaction import view_interaction, view_interaction_create
-from _include.Chimera.Chimera.view.interaction import view_interaction_edit, view_interaction_delete
-from _include.Chimera.Chimera.view.user import view_user
+from Chimera.view.interaction import view_interaction, view_interaction_create
 from view.auth import view_auth_user_add, view_login, view_logout
 from django.views.decorators.csrf import ensure_csrf_cookie
+from Chimera.view.interaction import view_interaction_edit
 from django.contrib.auth.decorators import login_required
+from Chimera.view.user import view_user
 from django.http import HttpResponse
 from django.shortcuts import render
 

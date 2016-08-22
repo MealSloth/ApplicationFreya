@@ -1,4 +1,4 @@
-from _include.Chimera.Chimera.databases import databases
+from Chimera.databases import databases
 import sys
 import os
 
