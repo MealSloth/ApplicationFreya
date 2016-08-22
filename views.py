@@ -11,7 +11,7 @@ from django.shortcuts import render
 @login_required
 @ensure_csrf_cookie
 def index(request):
-    response = render(request, 'index.html')
+    response = render(request, 'freya/index.html')
     return HttpResponse(response)
 
 

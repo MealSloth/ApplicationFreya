@@ -78,7 +78,7 @@ ROOT_URLCONF = 'Freya.urls'
 WSGI_APPLICATION = 'Freya.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'templates'),
+    os.path.join(PROJECT_PATH, 'Freya/templates'),
 )
 
 INSTALLED_APPS = (

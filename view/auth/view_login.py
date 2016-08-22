@@ -23,5 +23,5 @@ def login(request):
         else:
             reply = 'Invalid credentials'
 
-    response = render(request, 'auth/login.html', Context({'form': LoginForm(), 'reply': reply}))
+    response = render(request, 'freya/auth/login.html', Context({'form': LoginForm(), 'reply': reply}))
     return HttpResponse(response)

@@ -12,4 +12,4 @@ def auth_user_add(request):
     else:
         form = AuthUserAddForm()
 
-    return render(request, 'auth/auth-user-add.html', {'form': form})
+    return render(request, 'freya/auth/auth-user-add.html', {'form': form})
